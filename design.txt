@@ -77,8 +77,6 @@ One Movie contains many shows -> One to many
 One Show contains many seats -> One to many
 One User contains many bookings -> One to many
 
-
-
 APIs:
         addMovie ->POST
         updateMovie -> PUT
@@ -93,10 +91,6 @@ APIs:
         SearchByCity -> GET
         SearchByShow -> GET
         searchUser ->GET
-
-
-
-
 
 APIs:
 #Postman collection added in the root folder, import to use all apis.
