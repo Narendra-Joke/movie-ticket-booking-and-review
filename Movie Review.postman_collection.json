@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "bd60726b-e220-4592-8063-242f3e5cdfab",
+		"name": "Movie Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29618208"
+	},
+	"item": [
+		{
+			"name": "Add Movie By Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"PHIR HERA PERI\",\r\n    \"genre\":\"COMEDY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/movie/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"movie",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Review By User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"movieReview\":\"Fantastic\",\r\n    \"rating\":5,\r\n    \"movieId\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/review/add?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"review",
+						"add"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Review By ReviewId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/review/find?reviewId=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"review",
+						"find"
+					],
+					"query": [
+						{
+							"key": "reviewId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Movie By Title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/movie/find?title=PHIR HERA PERI",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"find"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "PHIR HERA PERI"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Movie By Title",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/movie/find?title=PHIR HERA PERI",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movie",
+								"find"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "PHIR HERA PERI"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 07:45:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"PHIR HERA PERI\",\n    \"genre\": \"COMEDY\",\n    \"rating\": 4.666666666666667,\n    \"reviews\": [\n        {\n            \"review\": \"Excellent\",\n            \"rating\": 5\n        },\n        {\n            \"review\": \"Super Dhamal\",\n            \"rating\": 5\n        },\n        {\n            \"review\": \"Unbelieveable\",\n            \"rating\": 4\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Movie By Genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/movie/genre?genre=ACTION",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movie",
+						"genre"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "ACTION"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
